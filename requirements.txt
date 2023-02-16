@@ -16,6 +16,3 @@ matplotlib
 
 # For executing some scripts
 fire
-
-# For huggingface dataset downloads
-datasets
