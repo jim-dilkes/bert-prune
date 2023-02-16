@@ -1,6 +1,6 @@
-tensorflow #>= 1.11.0   # CPU Version of TensorFlow.
+tensorflow==2.8 #>= 1.11.0   # CPU Version of TensorFlow.
 # tensorflow-gpu  >= 1.11.0  # GPU version of TensorFlow.
-spacy
+spacy==2.2.4
 # The large spacy model, which we use for sentence segmentation
 # https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-2.1.0/en_core_web_lg-2.1.0.tar.gz
 
