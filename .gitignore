@@ -129,3 +129,5 @@ models/
 *.png
 out/
 .models/*
+
+*.pem
