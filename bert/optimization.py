@@ -77,7 +77,8 @@ def create_optimizer(loss, init_lr, num_train_steps, num_warmup_steps, use_tpu, 
   if os.getenv('DISABLE_GRAD_CHECKPOINT'):
     grads = tf.gradients(loss, tvars)
   else:
-    grads = memory_saving_gradients.gradients(loss, tvars, checkpoints='memory')
+    grads = memory_saving_gradients.gradients(loss, tvars, checkpoints='speed')
+    # grads = memory_saving_gradients.gradients(loss, tvars, checkpoints='memory')
 
   # This is how the model was pre-trained.
   (grads, _) = tf.clip_by_global_norm(grads, clip_norm=1.0)

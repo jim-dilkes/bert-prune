@@ -128,3 +128,6 @@ dmypy.json
 models/
 *.png
 out/
+.models/*
+
+*.pem
