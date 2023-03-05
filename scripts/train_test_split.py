@@ -21,16 +21,16 @@ for dir_name in [train_dir, test_dir, dev_dir]:
 data_files = [fname for fname in os.listdir(data_dir) if
               os.path.isfile(pathjoin(data_dir, fname))]
 
-dev_size = int(len(data_files) * .01)
+dev_size = int(len(data_files) * .05)
 print(f'Found {len(data_files)} data files, splitting {dev_size} off for dev and test')
 
 random.shuffle(data_files)
 
 for fname in data_files[:dev_size]:
-    os.link(pathjoin(data_dir, fname), pathjoin(dev_dir, fname))
+    os.symlink(pathjoin(data_dir, fname), pathjoin(dev_dir, fname))
 
 for fname in data_files[dev_size:dev_size*2]:
-    os.link(pathjoin(data_dir, fname), pathjoin(test_dir, fname))
+    os.symlink(pathjoin(data_dir, fname), pathjoin(test_dir, fname))
 
 for fname in data_files[dev_size*2:]:
-    os.link(pathjoin(data_dir, fname), pathjoin(train_dir, fname))
+    os.symlink(pathjoin(data_dir, fname), pathjoin(train_dir, fname))
