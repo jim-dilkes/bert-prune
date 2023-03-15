@@ -13,7 +13,7 @@ dev=$base_dir/data/pretraining/dev
 orig_model=$models_dir/uncased-bert-prunable
 
 sparsity_args="--pruning_hparams=initial_sparsity=0,target_sparsity=.$sparsity,"
-      sparsity_args+="sparsity_function_end_step=5000,end_pruning_step=-1"
+sparsity_args+="sparsity_function_end_step=5000,end_pruning_step=-1"
 
 params="--train_batch_size 32
 --max_seq_length 128

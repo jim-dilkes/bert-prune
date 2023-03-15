@@ -11,6 +11,9 @@
 # git clone https://github.com/jim-dilkes/bert-prune.git
 # cd bert-prune
 
+# You might also need to run:
+# conda init bash
+
 ## It will not install the wiki extract package - this must be done using a separate
 #  python 3.8+ environment
 
@@ -36,3 +39,9 @@ unzip uncased_L-12_H-768_A-12.zip
 
 # Download GLUE
 python scripts/get_glue.py --data_dir data/glue_data
+
+# Download SQuAD
+mkdir data
+mkdir data/squad_data
+wget -P data/squad_data/ https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json 
+wget -P data/squad_data/ https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v2.0.json 
